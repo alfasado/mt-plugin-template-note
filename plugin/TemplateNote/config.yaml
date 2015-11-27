@@ -1,6 +1,6 @@
 name: TemplateNote
 id:   TemplateNote
-version: 0.1
+version: 0.2
 schema_version: 0.11
 author_name: Alfasado Inc.
 author_link: http://alfasado.net/
@@ -12,10 +12,14 @@ object_types:
 callbacks:
     MT::App::CMS::template_param.edit_template:
         -
-            handler: TemplateNote::Callbacks::_cb_mtappcmstemplate_param_edit_template
+            handler: TemplateNote::Callbacks::_cb_param_edit_template
+            priority: '5'
+    MT::App::CMS::template_param.header:
+        -
+            handler: TemplateNote::Callbacks::_cb_param_header
             priority: '5'
     MT::App::CMS::template_source.template_table:
         -
-            handler: TemplateNote::Callbacks::_cb_mtappcmstemplate_source_template_table
+            handler: TemplateNote::Callbacks::_cb_source_template_table
             priority: '1'
 
