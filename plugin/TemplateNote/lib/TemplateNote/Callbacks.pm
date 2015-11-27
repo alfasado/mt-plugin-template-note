@@ -22,7 +22,7 @@ MTML
 
 sub _cb_source_template_table {
     my ( $cb, $app, $tmpl ) = @_;
-    my $append = '<mt:if name="note"><br /><span class=""><mt:var name="note" escape="html"></span></mt:If>';
+    my $append = '<mt:if name="note"><br /><span class="description"><mt:var name="note" escape="html"></span></mt:If>';
     $$tmpl =~ s!(<mt:var name="name" escape="html"><\/a>)!$1 $append!;
 }
 
